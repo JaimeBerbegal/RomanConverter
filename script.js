@@ -127,10 +127,18 @@ function handleConversion() {
       // Convert the integer to a Roman numeral.
       const roman = integerToRoman(num);
       resultDiv.textContent = `Roman Numeral: ${roman}`;
+      //Gtag to int to roman conversion
+      gtag('event', 'conversion_made', {
+        'conversion_type': 'integerToRoman'
+      });
     } else if (mode === 'romanToInt') {
       // Convert the Roman numeral to an integer.
       const num = romanToInteger(input);
       resultDiv.textContent = `Integer: ${num}`;
+      //Gtag to roman to int conversion
+      gtag('event', 'conversion_made', {
+        'conversion_type': 'romanToInteger'
+      });
     }
   } catch (error) {
     // Display any error messages encountered during conversion.
